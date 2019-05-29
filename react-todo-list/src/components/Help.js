@@ -5,6 +5,7 @@ import Header from "./Header";
 
 class Help extends React.Component {
   componentDidMount() {
+    //   title tag defines page title
     document.title = "Help - what to do?";
   }
 
