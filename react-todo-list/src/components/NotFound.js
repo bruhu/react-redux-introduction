@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from "./Header";
 
-export default class NotFound extends Component {
+export class NotFound extends Component {
     componentDidMount() {
         document.title = "Error 404 - What to do?"
     }
