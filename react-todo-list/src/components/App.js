@@ -1,12 +1,13 @@
 import React from "react";
 import Header from "./Header";
 import ToDoList from "./ToDoList";
+import { getRandomTagline } from "../helpers.js";
 
 class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Header tagline="This could be your shopping list" />
+        <Header tagline={getRandomTagline()} />
         <ToDoList />
       </div>
     );
