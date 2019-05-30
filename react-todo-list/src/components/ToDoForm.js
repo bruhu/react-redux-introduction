@@ -11,9 +11,16 @@ class ToDoForm extends React.Component {
 //creats reference textInput
     textInput = React.createRef()
 
-  handleSubmit(e) {
-    e.preventDefault();
-    console.log(`Create new item: ${this.textInput.current.value}`);
+//   handleSubmit(e) {
+//     e.preventDefault();
+//     console.log(`Create new item: ${this.textInput.current.value}`);
+//   }
+
+
+//same as above but with newer ES6 syntax:
+  handleSubmit = (e) => {
+      e.preventDefault()
+      console.log(`Create new item: ${this.textInput.current.value}`);
   }
 
   render() {
