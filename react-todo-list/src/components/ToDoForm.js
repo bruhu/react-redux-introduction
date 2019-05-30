@@ -1,13 +1,18 @@
 // will show and handle the form we need to add new todo items to our list
-
-import React from "react"
+import React from "react";
 
 class ToDoForm extends React.Component {
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(`Create new item`);
+  }
+
   render() {
     return (
-      <form className="input-group my-3">
+      <form className="input-group my-3" onSubmit={this.handleSubmit}>
         <input
           className="form-control"
+          name="name"
           type="text"
           placeholder="Add a new to-do item ..."
         />
