@@ -30,12 +30,17 @@ class App extends React.Component {
     this.setState(state => {
       state.toDoItems[uuid].text = text;
       return state;
-    })
-  }
+    });
+  };
 
-  toggleToDoDone = event => 
+  toggleToDoDone = event => {
+    const checkbox = event.target;
 
-
+    this.setState(state => {
+      state.toDoItems[checkbox.value].done = checkbox.checked;
+      return state;
+    });
+  };
 
   render() {
     return (
