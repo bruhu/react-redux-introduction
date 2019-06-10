@@ -42,6 +42,13 @@ class App extends React.Component {
     });
   };
 
+  removeToDo = uuid => {
+    this.setState(state => {
+      delete state.toDoItems[uuid];
+      return state;
+    });
+  };
+
   render() {
     return (
       <div className="container">
