@@ -2,26 +2,27 @@
 import React from "react";
 
 class ToDoForm extends React.Component {
-    constructor(props){
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
-
-//creats reference textInput
-    textInput = React.createRef()
-
-//   handleSubmit(e) {
-//     e.preventDefault();
-//     console.log(`Create new item: ${this.textInput.current.value}`);
-//   }
-
-
-//same as above but with newer ES6 syntax:
-  handleSubmit = (e) => {
-      e.preventDefault()
-      console.log(`Create new item: ${this.textInput.current.value}`);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  //creats reference textInput
+  textInput = React.createRef();
+
+  //   handleSubmit(e) {
+  //     e.preventDefault();
+  //     console.log(`Create new item: ${this.textInput.current.value}`);
+  //   }
+
+  //same as above but with newer ES6 syntax:
+  handleSubmit = e => {
+    e.preventDefault();
+    const text = this.textInput.current.value.trim();
+    this.props.addToDo(text);
+    e.currentTarget.reset();
+  };
 
   render() {
     return (
@@ -35,7 +36,8 @@ class ToDoForm extends React.Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fas fa-plus" aria-hidden="true" />&nbsp;Add item
+            <i className="fas fa-plus" aria-hidden="true" />
+            &nbsp;Add item
           </button>
         </div>
       </form>
