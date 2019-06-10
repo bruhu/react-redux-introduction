@@ -3,6 +3,8 @@ import Header from "./Header";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 // import { getRandomTagline } from "../helpers.js";
+//uuid - npm package
+import uuid from "uuid/v4";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +14,15 @@ class App extends React.Component {
       toDoItems: {}
     };
   }
+
+  //mutations are added as functions and change/update the state
+  addToDo = text => {
+    const todo = {
+      uuid: uuid,
+      text: text,
+      done: false
+    };
+  };
 
   render() {
     return (
