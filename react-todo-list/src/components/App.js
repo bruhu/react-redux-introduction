@@ -14,7 +14,8 @@ class App extends React.Component {
       toDoItems: {}
     };
   }
-
+  
+  
   //mutations are added as functions and change/update the state
   addToDo = text => {
     const todo = {
@@ -22,14 +23,18 @@ class App extends React.Component {
       text: text,
       done: false
     };
+    this.setState(state => {
+      state.toDoItems[todo.uuid] = todo;
+      return state
+    })
   };
-
+  
   render() {
     return (
       <div className="container">
         <Header tagline="Here are all the next tasks." />
         {/* <Header tagline={getRandomTagline()} /> */}
-        <ToDoForm />
+        <ToDoForm addToDo={this.addToDo} />
         <ToDoList />
       </div>
     );
