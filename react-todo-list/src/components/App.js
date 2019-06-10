@@ -33,9 +33,8 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header tagline="Here are all the next tasks." />
-        {/* <Header tagline={getRandomTagline()} /> */}
         <ToDoForm addToDo={this.addToDo} />
-        <ToDoList />
+        <ToDoList items={this.state.toDoItems} />
       </div>
     );
   }
