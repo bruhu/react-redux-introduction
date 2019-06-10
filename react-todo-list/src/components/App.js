@@ -26,6 +26,7 @@ class App extends React.Component {
     });
   };
 
+  // Updates the text of a todo item and will be used for the input field of each item.
   updateToDoText = (uuid, text) => {
     this.setState(state => {
       state.toDoItems[uuid].text = text;
@@ -33,6 +34,7 @@ class App extends React.Component {
     });
   };
 
+  // (Un)checks a todo item and will be used on click on the checkbox in front of each item.
   toggleToDoDone = event => {
     const checkbox = event.target;
 
@@ -42,6 +44,7 @@ class App extends React.Component {
     });
   };
 
+  // Removes a todo item and will be used on click on the remove icon, we will add to each item.
   removeToDo = uuid => {
     this.setState(state => {
       delete state.toDoItems[uuid];
