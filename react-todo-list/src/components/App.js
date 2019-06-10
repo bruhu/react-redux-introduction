@@ -4,13 +4,19 @@ import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 // import { getRandomTagline } from "../helpers.js";
 
-
-
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      toDoItems: {}
+    };
+  }
+
   render() {
     return (
       <div className="container">
-      <Header tagline="Here are all the next tasks."/>
+        <Header tagline="Here are all the next tasks." />
         {/* <Header tagline={getRandomTagline()} /> */}
         <ToDoForm />
         <ToDoList />

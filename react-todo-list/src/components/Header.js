@@ -15,8 +15,8 @@ import React from "react";
 const Header = props => {
     return(
         <header className="header">
-        <h1>What to do?</h1>
-        <span className="tagline">{props.tagline}</span>
+        <h1 className="text-muted">What to do?</h1>
+        <span className="tagline, text-danger">{props.tagline}</span>
       </header>
     )
 }
